@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cocoa farmer form</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-group">
+                    <label for="id_name">Name</label>
+                    <input id="id_name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_age">Age</label>
+                    <input id="id_age" type="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_province">Province</label>
+                    <input id="id_province" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_country">Country</label>
+                    <input id="id_country" type="text" required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Farm Information</legend>
+                <div class="form-group">
+                    <label for="id_hectares">Hectares of land</label>
+                    <input id="id_hectares" type="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_familyMembers">Family Members</label>
+                    <input id="id_familyMembers" type="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_crops">List the crops you grow</label>
+                    <input id="id_crops" type="text" required>
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
