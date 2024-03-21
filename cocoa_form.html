@@ -13,20 +13,24 @@
           <legend>Personal Information</legend placeholder=" ">
           <div class="form-group">
             <label for="id_name">Name</label>
-            <input id="id_name" type="text" placeholder=" " required />
+            <input id="id_name" type="text" placeholder=" " pattern="[A-Za-z]+" required />
+            <p class="error">YOU FUCKED UP</p>
           </div>
           <div class="form-group">
             <!-- age skulle have været en dato man indtaster -->
             <label for="id_age">Age</label>
             <input id="id_age" type="number" placeholder=" " required />
+            <p class="error">YOU FUCKED UP</p>
           </div>
           <div class="form-group">
             <label for="id_province">Province</label>
             <input id="id_province" type="text" placeholder=" " required />
+            <p class="error">YOU REALLY FUCKED UP</p>
           </div>
           <div class="form-group">
             <label for="id_country">Country</label>
             <input id="id_country" type="text" placeholder=" " required />
+            <p class="error">ARE YOU RETARDED????!</p>
           </div>
         </fieldset>
         <fieldset>
@@ -34,15 +38,20 @@
           <div class="form-group">
             <label for="id_hectares">Hectares of land</label>
             <input id="id_hectares" type="number" placeholder=" " required />
+            <p class="error">WOW</p>
           </div>
           <div class="form-group">
             <label for="id_familyMembers">Family Members</label>
             <input id="id_familyMembers" type="number" placeholder=" " required />
+            <p class="error">YOU FUCKED UP</p>
           </div>
           <div class="form-group">
             <label for="id_crops">List the crops you grow</label>
             <input id="id_crops" type="text" placeholder=" " required />
+            <p class="error">YOU FUCKED UP</p>
           </div>
+          <label for="id_radio">Blir pink når du trykker:P</label> 
+          <input id="id_radio" type="radio">
         </fieldset>
         <button type="submit">Submit</button>
       </form>

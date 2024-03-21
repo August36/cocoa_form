@@ -4,18 +4,14 @@
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 3rem auto;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -54,12 +50,21 @@ label {
   color: #333333;
 }
 
+label:has(input):focus {
+  outline: 2px solid blue;
+}
+
 input[type="text"],
 input[type="number"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 2px solid blue;
 }
 
 button[type="submit"] {
@@ -104,8 +109,14 @@ input:user-valid {
   background-color: green;
 }
 
+input:user-invalid + .error {
+  visibility: visible;
+}
+
 .error {
   visibility: hidden;
+  color: hotpink;
+  font-weight: 900;
 }
 
 /* input::placeholder {
@@ -115,11 +126,11 @@ input:user-valid {
 /* @supports - tjek if browseren understøtter visse ting */
 
 /* @supports (margin: 10px) { */
-/* understøtter browseren margin:10px;(fjollet eksempel) - aktiver tilføj de styles der kunne stå her */
+/* understøtter browseren margin:10px;(fjollet eksempel) - aktiver de styles der kunne stå her */
 /* } */
 
 /* @supports (!margin: 10px;) { */
-/* understøtter browseren IKKE margin:10px; - aktiver tilføj de styles der kunne stå her */
+/* understøtter browseren IKKE margin:10px; - aktiver de styles der kunne stå her */
 /* } */
 
 /* .form-group:has(input:user-invalid) {
@@ -138,3 +149,20 @@ input:user-valid {
 textarea {
   field-sizing: content; - nu tilpasser textarea sig til mængden af content (altså hvor meget fx tekst der er), i stedet bruge scroll, hvis content fylder mere end textareas størrelse
 } - Dette kan også bruge på et input felt*/
+
+/* ved brug af focus state - tænk over kontrast, hvis du fx har darkmode, skal de focus statet måske ændres så det er synligt */
+
+input[type="radio"] {
+  accent-color: hotpink;
+}
+
+/* cascade layers - en måde at håndtere specificity på 
+@layer reset, components, states:
+
+@layer states {
+    så stats vil her altid vinde, lige meget hvad jeg har skrevet i resten af min css
+}*/
+
+/* font-size: max(16px, 1em); - ved at skrive max og angive de to størrelser, vælges den største størrelse, som er brugbart i at lave et responsivt design - dette kan fx anvendes på et input-felt i et reset layer.
+Inputs har sin egen font, men ved at bruge font: inherit; nedarver input-feltet parent containerens font
+*/
