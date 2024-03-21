@@ -129,3 +129,12 @@ input:user-valid {
 /* .form-group:has(input:user-valid) {
     har klassen .form-group et input felt som er validt - aktiver styles der kunne stå her
 } */
+
+/* form:valid {
+    her kan du fx sige at, når hele formen er udfyldt korrekt, kan du trykke på fx en sign-up button, og omvendt med invalid
+} */
+
+/* input,
+textarea {
+  field-sizing: content; - nu tilpasser textarea sig til mængden af content (altså hvor meget fx tekst der er), i stedet bruge scroll, hvis content fylder mere end textareas størrelse
+} - Dette kan også bruge på et input felt*/
