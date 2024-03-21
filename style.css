@@ -96,10 +96,36 @@ input:invalid:not(:focus, :placeholder-shown) + .error {
   /* generelt er det dårligt at have placeholders, men du kan ved enten at sætte placeholder=" " eller input::placeholder{opacity: 0;, skjule placeholder teksten og derfor få invalid pseudo class til at virke hensigtsmæssigt} */
 }
 
+/* Ny css funktion der kan opnå det samme som overstående kode: :user-invalid */
+input:user-invalid {
+  background-color: red;
+}
+input:user-valid {
+  background-color: green;
+}
+
 .error {
   visibility: hidden;
 }
 
 /* input::placeholder {
   opacity: 0;
+} */
+
+/* @supports - tjek if browseren understøtter visse ting */
+
+/* @supports (margin: 10px) { */
+/* understøtter browseren margin:10px;(fjollet eksempel) - aktiver tilføj de styles der kunne stå her */
+/* } */
+
+/* @supports (!margin: 10px;) { */
+/* understøtter browseren IKKE margin:10px; - aktiver tilføj de styles der kunne stå her */
+/* } */
+
+/* .form-group:has(input:user-invalid) {
+    har klassen .form-group et input felt som ikke er valid - aktiver styles der kunne stå her
+} */
+
+/* .form-group:has(input:user-valid) {
+    har klassen .form-group et input felt som er validt - aktiver styles der kunne stå her
 } */
